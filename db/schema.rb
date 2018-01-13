@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_01_13_201444) do
+ActiveRecord::Schema.define(version: 2018_01_13_225154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,39 @@ ActiveRecord::Schema.define(version: 2018_01_13_201444) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "communities", force: :cascade do |t|
+    t.string "name"
+    t.integer "num_of_member"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ledgers", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "community_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["community_id"], name: "index_ledgers_on_community_id"
+    t.index ["user_id"], name: "index_ledgers_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.integer "user_id"
+    t.integer "community_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.string "content"
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -43,4 +76,6 @@ ActiveRecord::Schema.define(version: 2018_01_13_201444) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "ledgers", "communities"
+  add_foreign_key "ledgers", "users"
 end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :communities, except: [:destroy] do
     resources :posts
   end
-  relso]ources :posts do
+  resources :posts do
     resources :replies, except: [:show, :index]
   end
 

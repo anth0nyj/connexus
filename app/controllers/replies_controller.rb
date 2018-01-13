@@ -1,24 +1,12 @@
 class RepliesController < ApplicationController
-  before_action :set_reply, only: [:show, :update, :destroy]
-
-  # GET /replies
-  def index
-    @replies = Reply.all
-
-    render json: @replies
-  end
-
-  # GET /replies/1
-  def show
-    render json: @reply
-  end
+  before_action :set_reply, only: [:update, :destroy]
 
   # POST /replies
   def create
     @reply = Reply.new(reply_params)
 
     if @reply.save
-      render json: @reply, status: :created, location: @reply
+      render json: @reply, status: :created
     else
       render json: @reply.errors, status: :unprocessable_entity
     end

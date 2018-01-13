@@ -3,14 +3,14 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = Post.where(community_id: params[:community_id])
 
-    render json: @posts
+    render json: @posts.to_json(include: :replies)
   end
 
   # GET /posts/1
   def show
-    render json: @post
+    render json: @post.to_json(include: :replies)
   end
 
   # POST /posts
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      render json: @post, status: :created, location: @post
+      render json: @post, status: :created
     else
       render json: @post.errors, status: :unprocessable_entity
     end

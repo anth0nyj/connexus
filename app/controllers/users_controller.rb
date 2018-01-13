@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 
     if user && user.authenticate(params[:user][:password])
       token = create_token(user.id, user.username)
-      render json: { status: 200, user: user }
+      render json: { status: 200, token: token, user: user }
     else
       render json: { status: 401, message: "Unauthorized" }
     end
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def create_token
+    def create_token(id, username)
       JWT.encode(payload(id, username), ENV['JWT_SECRET'], 'HS256')
     end
 

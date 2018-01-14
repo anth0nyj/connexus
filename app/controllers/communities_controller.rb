@@ -10,7 +10,7 @@ class CommunitiesController < ApplicationController
   def index
     @communities = Community.all
 
-    render json: @communities.to_json(include: :posts)
+    render json: @communities.to_json(include: {posts: {include: :replies} })
   end
 
   # GET /communities/1

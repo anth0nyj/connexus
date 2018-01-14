@@ -1256,3 +1256,605 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.0ms)
 
 
+Started POST "/communities" for 127.0.0.1 at 2018-01-13 19:16:02 -0600
+  
+SyntaxError (/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:14: syntax error, unexpected ',', expecting =>
+ties.to_json(include: :posts), userCommunities.to_json(inclu
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:14: syntax error, unexpected '}', expecting keyword_end
+ties.to_json(include: :posts)}
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/communities_controller.rb:14: syntax error, unexpected ',', expecting =>
+app/controllers/communities_controller.rb:14: syntax error, unexpected '}', expecting keyword_end
+app/controllers/communities_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/communities" for 127.0.0.1 at 2018-01-13 19:16:34 -0600
+  
+SyntaxError (/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:14: syntax error, unexpected ',', expecting ')'
+ties.to_json(include: :posts), userCommunities.to_json(inclu
+                              ^):
+  
+app/controllers/communities_controller.rb:14: syntax error, unexpected ',', expecting ')'
+Started POST "/communities" for 127.0.0.1 at 2018-01-13 19:16:57 -0600
+  
+SyntaxError (/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:14: syntax error, unexpected '}', expecting =>
+ties.to_json(include: :posts)},{ userCommunities.to_json(inc
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:14: syntax error, unexpected '}', expecting =>
+ties.to_json(include: :posts)})
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:52: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/controllers/communities_controller.rb:14: syntax error, unexpected '}', expecting =>
+app/controllers/communities_controller.rb:14: syntax error, unexpected '}', expecting =>
+app/controllers/communities_controller.rb:52: syntax error, unexpected keyword_end, expecting ')'
+Started POST "/communities" for 127.0.0.1 at 2018-01-13 19:17:29 -0600
+  
+SyntaxError (/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:14: syntax error, unexpected '}', expecting =>
+ties.to_json(include: :posts)}, { userCommunities.to_json(in
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:14: syntax error, unexpected '}', expecting =>
+ties.to_json(include: :posts)}
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/communities_controller.rb:14: syntax error, unexpected '}', expecting =>
+app/controllers/communities_controller.rb:14: syntax error, unexpected '}', expecting =>
+app/controllers/communities_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/communities" for 127.0.0.1 at 2018-01-13 19:18:16 -0600
+Processing by CommunitiesController#create as */*
+  Parameters: {"user"=>{"username"=>"hector", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 64ms
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: community):
+  
+app/controllers/communities_controller.rb:50:in `community_params'
+app/controllers/communities_controller.rb:24:in `create'
+Started POST "/ledgers" for 127.0.0.1 at 2018-01-13 19:21:12 -0600
+Processing by LedgersController#create as */*
+  Parameters: {"user"=>{"username"=>"hector", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 10ms
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: ledger):
+  
+app/controllers/ledgers_controller.rb:49:in `ledger_params'
+app/controllers/ledgers_controller.rb:18:in `create'
+Started POST "/ledgers" for 127.0.0.1 at 2018-01-13 19:21:21 -0600
+Processing by LedgersController#create as */*
+  Parameters: {"user"=>{"username"=>"hector", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 3ms
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: ledger):
+  
+app/controllers/ledgers_controller.rb:49:in `ledger_params'
+app/controllers/ledgers_controller.rb:18:in `create'
+Started GET "/communities/1/posts/1" for 127.0.0.1 at 2018-01-14 14:25:06 -0600
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#show as HTML
+  Parameters: {"community_id"=>"1", "id"=>"1"}
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReply Load (0.8ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+Completed 200 OK in 161ms (Views: 0.2ms | ActiveRecord: 18.7ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-01-14 14:25:56 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"hector", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hector"], ["LIMIT", 1]]
+Completed 200 OK in 109ms (Views: 0.6ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-01-14 14:31:16 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"hector", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hector"], ["LIMIT", 1]]
+Completed 200 OK in 104ms (Views: 1.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-01-14 14:31:47 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"hector", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hector"], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:40:22 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (19.2ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 207ms (Views: 0.1ms | ActiveRecord: 138.5ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:41:37 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:43:39 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:45:28 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.0ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:45:50 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:46:44 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:48:41 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:48:56 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.7ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:49:08 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:49:48 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:49:59 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:51:34 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (2.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:52:34 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.8ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:54:10 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 21.0ms)
+
+
+  
+NoMethodError (undefined method `replies' for #<Community:0x00007ffc4c8809a0>
+Did you mean?  readlines):
+  
+app/controllers/communities_controller.rb:13:in `index'
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:56:34 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 7.4ms)
+
+
+  
+NoMethodError (undefined method `"posts"' for #<Community:0x00007ffc4c504538>
+Did you mean?  posts
+               posts=):
+  
+app/controllers/communities_controller.rb:13:in `index'
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 14:58:24 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 11.4ms)
+
+
+  
+NoMethodError (undefined method `"posts"' for #<Community:0x00007ffc4de04538>
+Did you mean?  posts
+               posts=):
+  
+app/controllers/communities_controller.rb:13:in `index'
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:04:58 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (2.0ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 207ms (Views: 0.1ms | ActiveRecord: 68.5ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-01-14 15:09:42 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"hector", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (30.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hector"], ["LIMIT", 1]]
+Completed 200 OK in 149ms (Views: 0.8ms | ActiveRecord: 39.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-14 15:09:52 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-14 15:10:00 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:10:02 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 27ms (Views: 0.3ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-01-14 15:11:50 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"hector", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hector"], ["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:11:55 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-01-14 15:12:10 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"hector", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hector"], ["LIMIT", 1]]
+Completed 200 OK in 101ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:14:54 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:24:14 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.3ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 140ms (Views: 0.1ms | ActiveRecord: 57.0ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:24:21 -0600
+Processing by CommunitiesController#index as HTML
+Started GET "/communities/undefined/posts/undefined" for 127.0.0.1 at 2018-01-14 15:24:21 -0600
+Processing by PostsController#show as HTML
+  [1m[36mCommunity Load (40.9ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  Parameters: {"community_id"=>"undefined", "id"=>"undefined"}
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 60ms (Views: 0.2ms | ActiveRecord: 43.5ms)
+
+
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 38ms (ActiveRecord: 16.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:44:in `set_post'
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:27:29 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.0ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/communities/1/posts/1" for 127.0.0.1 at 2018-01-14 15:27:29 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"community_id"=>"1", "id"=>"1"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReply Load (14.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+Completed 200 OK in 212ms (Views: 0.2ms | ActiveRecord: 29.2ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:30:25 -0600
+Started GET "/communities/undefined/posts/undefined" for 127.0.0.1 at 2018-01-14 15:30:25 -0600
+Processing by CommunitiesController#index as HTML
+Processing by PostsController#show as HTML
+  Parameters: {"community_id"=>"undefined", "id"=>"undefined"}
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 2.6ms)
+
+
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 43ms (ActiveRecord: 29.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:44:in `set_post'
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:37:18 -0600
+Started GET "/communities/undefined/posts/undefined" for 127.0.0.1 at 2018-01-14 15:37:18 -0600
+  
+SyntaxError (/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:13: syntax error, unexpected =>
+ommunities.to_json(include: => {:posts  => {:include => :rep
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:13: syntax error, unexpected ')', expecting keyword_end
+s  => {:include => :replies}})
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/communities_controller.rb:13: syntax error, unexpected =>
+app/controllers/communities_controller.rb:13: syntax error, unexpected ')', expecting keyword_end
+app/controllers/communities_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end
+Processing by PostsController#show as HTML
+  Parameters: {"community_id"=>"undefined", "id"=>"undefined"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 131ms (ActiveRecord: 41.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:44:in `set_post'
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:37:39 -0600
+  
+SyntaxError (/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:13: syntax error, unexpected =>
+ommunities.to_json(include: => {:posts  => {:include => :rep
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:13: syntax error, unexpected ')', expecting keyword_end
+s  => {:include => :replies}})
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/communities_controller.rb:13: syntax error, unexpected =>
+app/controllers/communities_controller.rb:13: syntax error, unexpected ')', expecting keyword_end
+app/controllers/communities_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:38:22 -0600
+  
+SyntaxError (/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:13: syntax error, unexpected =>
+ommunities.to_json(include: => {:posts  => {:include => :rep
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:13: syntax error, unexpected ')', expecting keyword_end
+s  => {:include => :replies}})
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/communities_controller.rb:13: syntax error, unexpected =>
+app/controllers/communities_controller.rb:13: syntax error, unexpected ')', expecting keyword_end
+app/controllers/communities_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:49:34 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:13: syntax error, unexpected =>
+ommunities.to_json(include: => {:posts => :replies})
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:13: syntax error, unexpected ')', expecting keyword_end
+lude: => {:posts => :replies})
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/communities_controller.rb:13: syntax error, unexpected =>
+app/controllers/communities_controller.rb:13: syntax error, unexpected ')', expecting keyword_end
+app/controllers/communities_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:50:56 -0600
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:13: syntax error, unexpected '{', expecting =>
+ies.to_json(include: {:posts {include: :replies} })
+                              ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/controllers/communities_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/communities_controller.rb:13: syntax error, unexpected '{', expecting =>
+app/controllers/communities_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:57:46 -0600
+Processing by CommunitiesController#index as HTML
+Completed 500 Internal Server Error in 81ms
+
+
+  
+NoMethodError (undefined method `replies' for :posts:Symbol):
+  
+app/controllers/communities_controller.rb:13:in `index'
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 15:58:06 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.1ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+Completed 500 Internal Server Error in 222ms (ActiveRecord: 56.4ms)
+
+
+  
+NoMethodError (undefined method `replies' for #<Community:0x00007fa6ab0d0260>
+Did you mean?  readlines):
+  
+app/controllers/communities_controller.rb:13:in `index'
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 16:01:17 -0600
+Processing by CommunitiesController#index as HTML
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Unknown key: :include. Valid keys are: :class_name, :anonymous_class, :foreign_key, :validate, :autosave, :table_name, :before_add, :after_add, :before_remove, :after_remove, :extend, :primary_key, :dependent, :as, :through, :source, :source_type, :inverse_of, :counter_cache, :join_table, :foreign_type, :index_errors):
+  
+app/models/community.rb:4:in `<class:Community>'
+app/models/community.rb:1:in `<main>'
+app/controllers/communities_controller.rb:11:in `index'
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 16:03:45 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 8.2ms)
+
+
+  
+SyntaxError (/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/models/post.rb:8: syntax error, unexpected tSYMBEG, expecting ')'
+          :include => {
+           ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/models/post.rb:9: syntax error, unexpected '\n', expecting =>):
+  
+app/models/post.rb:8: syntax error, unexpected tSYMBEG, expecting ')'
+app/models/post.rb:9: syntax error, unexpected '\n', expecting =>
+app/controllers/communities_controller.rb:13:in `index'
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 16:05:13 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 7.9ms)
+
+
+  
+SyntaxError (/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/models/post.rb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+        include: :replies #=> {:only => [:nam
+               ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/models/post.rb:9: syntax error, unexpected ')', expecting keyword_end
+    )
+     ^):
+  
+app/models/post.rb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/models/post.rb:9: syntax error, unexpected ')', expecting keyword_end
+app/controllers/communities_controller.rb:13:in `index'
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 16:05:54 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 9.7ms)
+
+
+  
+SyntaxError (/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/models/post.rb:8: syntax error, unexpected ':', expecting keyword_end
+        include: :replies #=> {:only => [:name
+                ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/models/post.rb:11: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/models/post.rb:8: syntax error, unexpected ':', expecting keyword_end
+app/models/post.rb:11: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/communities_controller.rb:13:in `index'
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 16:06:28 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.8ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 7.2ms)
+
+
+  
+SyntaxError (/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/models/post.rb:8: syntax error, unexpected ':', expecting keyword_end
+        include: :replies #=> {:only => [:name
+                ^
+/Users/jam2012/Desktop/dev/Community_Forum_App/community_app_api/app/models/post.rb:11: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/models/post.rb:8: syntax error, unexpected ':', expecting keyword_end
+app/models/post.rb:11: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/communities_controller.rb:13:in `index'
+Started GET "/communities" for 127.0.0.1 at 2018-01-14 16:09:43 -0600
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (1.4ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (0.4ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (0.3ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (0.3ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.3ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (0.3ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 212ms (Views: 0.2ms | ActiveRecord: 28.2ms)
+
+

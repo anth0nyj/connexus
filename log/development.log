@@ -1248,3 +1248,11 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 39ms (Views: 0.2ms | ActiveRecord: 8.7ms)
 
 
+Started GET "/communities/1/posts/1" for 127.0.0.1 at 2018-01-13 18:59:36 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"community_id"=>"1", "id"=>"1"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReply Load (0.4ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+

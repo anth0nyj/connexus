@@ -3707,3 +3707,444 @@ Processing by UsersController#create as HTML
 Completed 200 OK in 173ms (Views: 0.9ms | ActiveRecord: 10.8ms)
 
 
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 22:34:53 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.3ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (0.3ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (0.3ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2018-01-15 22:35:01 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"mark", "password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "mark"], ["password_digest", "$2a$10$QOoRqI6Ih1QU3XBIX86TO.9EYqDLDovZksH8L5urd1lA95WcE.BSa"], ["created_at", "2018-01-16 03:35:01.828765"], ["updated_at", "2018-01-16 03:35:01.828765"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mark"], ["LIMIT", 1]]
+Completed 200 OK in 163ms (Views: 0.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 22:46:09 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (0.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 46ms (Views: 0.1ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 22:46:15 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (0.1ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.1ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-01-15 22:47:16 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"anthony", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "anthony"], ["LIMIT", 1]]
+Completed 200 OK in 89ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/ledgers" for 127.0.0.1 at 2018-01-15 22:47:17 -0500
+Processing by LedgersController#index as HTML
+  [1m[36mLedger Load (1.9ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 45ms (Views: 0.1ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 22:50:50 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (0.4ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (0.3ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 34ms (Views: 0.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 23:22:00 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (5.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (5.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (6.1ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (1.5ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (1.3ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (1.4ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (1.4ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (1.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 218ms (Views: 0.6ms | ActiveRecord: 89.3ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 23:22:36 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.8ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (2.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (1.4ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (0.8ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (0.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (1.3ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (1.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 103ms (Views: 0.8ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 23:22:42 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.7ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (1.1ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (1.1ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (0.8ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.7ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (0.8ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 72ms (Views: 1.5ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 23:24:28 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.4ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (0.8ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (0.7ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (1.7ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 77ms (Views: 0.3ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 23:24:34 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (1.4ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (2.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (2.5ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (1.4ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 85ms (Views: 0.3ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 23:25:52 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (1.1ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (0.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (0.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 78ms (Views: 0.4ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 23:26:35 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.3ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (1.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (0.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.7ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (0.7ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 70ms (Views: 0.4ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 23:29:59 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (1.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (1.1ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (1.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (0.8ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 76ms (Views: 0.3ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 23:31:00 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (1.4ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (0.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.7ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (0.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 71ms (Views: 0.5ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 23:31:28 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.3ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (1.1ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (0.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (0.7ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.7ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (1.1ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 71ms (Views: 1.0ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 23:32:09 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (2.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (0.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.7ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (0.8ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 70ms (Views: 0.3ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 23:34:42 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.3ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (1.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (1.1ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (1.1ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 88ms (Views: 0.4ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-01-15 23:34:54 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"anthony", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "anthony"], ["LIMIT", 1]]
+Completed 200 OK in 324ms (Views: 2.2ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/ledgers" for 127.0.0.1 at 2018-01-15 23:34:54 -0500
+Processing by LedgersController#index as HTML
+  [1m[36mLedger Load (28.4ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers"[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (1.8ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (1.8ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCommunity Load (1.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCommunity Load (1.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 214ms (Views: 0.4ms | ActiveRecord: 45.1ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-15 23:34:58 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (2.0ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (0.8ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (1.1ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (1.4ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.7ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (0.7ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 70ms (Views: 0.3ms | ActiveRecord: 11.7ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2018-01-15 23:35:13 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"bandit", "password"=>"[FILTERED]"}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "bandit"], ["password_digest", "$2a$10$kKZxw/l3ApTLJz28fehDFOx69HVmf/hPJ.djMEeGuFN84xQs9kmPi"], ["created_at", "2018-01-16 04:35:13.804661"], ["updated_at", "2018-01-16 04:35:13.804661"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "bandit"], ["LIMIT", 1]]
+Completed 200 OK in 617ms (Views: 2.2ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-16 10:20:47 -0500
+  [1m[35m (12.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (5.4ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (4.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (4.8ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (0.6ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (0.5ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (0.3ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (0.3ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (0.3ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 220ms (Views: 0.2ms | ActiveRecord: 63.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-16 10:23:51 -0500
+  
+SyntaxError (/Users/anthonyalvarez/Desktop/dev/community_app/community_app_api/app/controllers/welcome_controller.rb:3: syntax error, unexpected ';', expecting =>
+ json: { status: 200, message; "Community API" }
+                              ^
+/Users/anthonyalvarez/Desktop/dev/community_app/community_app_api/app/controllers/welcome_controller.rb:3: syntax error, unexpected '}', expecting keyword_end
+00, message; "Community API" }
+                              ^):
+  
+app/controllers/welcome_controller.rb:3: syntax error, unexpected ';', expecting =>
+app/controllers/welcome_controller.rb:3: syntax error, unexpected '}', expecting keyword_end
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-01-16 10:23:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.0.beta2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0.beta2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0.beta2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0.beta2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0.beta2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0.beta2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0.beta2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0.beta2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0.beta2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0.beta2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0.beta2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0.beta2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0.beta2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0.beta2) lib/rails/engine.rb:524:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-16 10:24:08 -0500
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+

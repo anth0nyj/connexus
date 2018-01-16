@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+  resources :notices
   resources :ledgers
   resources :users do
     collection do

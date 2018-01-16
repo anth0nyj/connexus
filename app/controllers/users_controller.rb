@@ -54,6 +54,10 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def create_token(id, username)
+      p "id:"
+      p id
+      p "username:"
+      p username
       JWT.encode(payload(id, username), ENV['JWT_SECRET'], 'HS256')
     end
 

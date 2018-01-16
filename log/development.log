@@ -4333,3 +4333,116 @@ Processing by UsersController#create as HTML
 Completed 200 OK in 204ms (Views: 0.9ms | ActiveRecord: 3.1ms)
 
 
+Started POST "/users/create" for 127.0.0.1 at 2018-01-16 13:54:22 -0500
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"marcus", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (5.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "marcus"], ["password_digest", "$2a$10$VtJDByUgf1dgCDeJYH0rxO4gqhyb738tjfx61qRoF0HM9SbGZDDuO"], ["created_at", "2018-01-16 18:54:22.522488"], ["updated_at", "2018-01-16 18:54:22.522488"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "marcus"], ["LIMIT", 1]]
+Completed 200 OK in 197ms (Views: 1.5ms | ActiveRecord: 17.7ms)
+
+
+Started POST "/users/" for 127.0.0.1 at 2018-01-16 13:54:31 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"marcus", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "marcus"], ["password_digest", "$2a$10$A8aAb/h/rVqd7/uIZU1MPuV3QP2u6U52I9QLTEAEBCCSdQrRS/zxm"], ["created_at", "2018-01-16 18:54:31.447038"], ["updated_at", "2018-01-16 18:54:31.447038"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "marcus"], ["LIMIT", 1]]
+Completed 200 OK in 175ms (Views: 0.9ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/" for 127.0.0.1 at 2018-01-16 13:54:37 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+actionpack (5.2.0.beta2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0.beta2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0.beta2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0.beta2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0.beta2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0.beta2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0.beta2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0.beta2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0.beta2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0.beta2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0.beta2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0.beta2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0.beta2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0.beta2) lib/rails/engine.rb:524:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/create" for 127.0.0.1 at 2018-01-16 13:54:57 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"alice", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "alice"], ["password_digest", "$2a$10$kiSPJKj6Gm7EDIq/9PIwWeH0xijDfj1hnEWk7Yd0WhUBY5pxMwqV."], ["created_at", "2018-01-16 18:54:58.088430"], ["updated_at", "2018-01-16 18:54:58.088430"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "alice"], ["LIMIT", 1]]
+Completed 200 OK in 178ms (Views: 0.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-16 14:06:25 -0500
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (2.0ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (3.5ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mReply Load (0.7ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mReply Load (0.3ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 2]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 3]]
+  [1m[36mReply Load (0.4ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[36mReply Load (0.6ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 4]]
+Completed 200 OK in 161ms (Views: 0.3ms | ActiveRecord: 45.5ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2018-01-16 14:06:34 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"karolin", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "karolin"], ["password_digest", "$2a$10$1DDsNkG8IeNbfh2GW/GiR.3js9xDH3ib/gHCWFnXg1ENfW/DrrAcm"], ["created_at", "2018-01-16 19:06:34.804436"], ["updated_at", "2018-01-16 19:06:34.804436"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "karolin"], ["LIMIT", 1]]
+Completed 200 OK in 227ms (Views: 0.7ms | ActiveRecord: 16.2ms)
+
+
+Started POST "/users/" for 127.0.0.1 at 2018-01-16 14:12:38 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:80:in `user_params'
+app/controllers/users_controller.rb:20:in `create'
+Started POST "/users/" for 127.0.0.1 at 2018-01-16 14:13:30 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"anthony"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 56ms (Views: 0.3ms | ActiveRecord: 16.9ms)
+
+
+Started POST "/users/" for 127.0.0.1 at 2018-01-16 14:13:40 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"anthony", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "anthony"], ["password_digest", "$2a$10$24B7RZKY4dHmL/St92eVAOkWF1tJVpHYSZBPskDj11zuJzgagPd3i"], ["created_at", "2018-01-16 19:13:40.167844"], ["updated_at", "2018-01-16 19:13:40.167844"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "anthony"], ["LIMIT", 1]]
+Completed 200 OK in 217ms (Views: 1.3ms | ActiveRecord: 4.9ms)
+
+

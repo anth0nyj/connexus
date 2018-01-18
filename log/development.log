@@ -4770,3 +4770,79 @@ Processing by UsersController#create as HTML
 Completed 200 OK in 207ms (Views: 0.8ms | ActiveRecord: 4.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-17 21:40:16 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-17 21:40:20 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (2.1ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+Completed 200 OK in 125ms (Views: 0.1ms | ActiveRecord: 23.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-17 21:40:37 -0500
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-17 21:43:22 -0500
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-17 21:43:32 -0500
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-17 21:44:23 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-17 21:44:30 -0500
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-17 21:47:12 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (14.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 43ms (Views: 9.5ms | ActiveRecord: 22.9ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-17 21:49:01 -0500
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.2ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (0.9ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+Completed 200 OK in 69ms (Views: 0.1ms | ActiveRecord: 19.2ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-01-17 21:49:21 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"gg", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gg"], ["LIMIT", 1]]
+Completed 200 OK in 71ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/ledgers" for 127.0.0.1 at 2018-01-17 21:49:21 -0500
+Processing by LedgersController#index as HTML
+  [1m[36mLedger Load (26.3ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.9ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 0.1ms | ActiveRecord: 33.6ms)
+
+

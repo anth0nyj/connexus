@@ -5,7 +5,7 @@ class LedgersController < ApplicationController
   def index
     @ledgers = Ledger.all
 
-    render json: @ledgers.to_json(include: [:user, :community])
+    render json: @ledgers.to_json(include: [:user, {community: {include: {posts: {include: :replies} } } }])
   end
 
   # GET /ledgers/1

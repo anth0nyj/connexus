@@ -4846,3 +4846,59 @@ Processing by LedgersController#index as HTML
 Completed 200 OK in 59ms (Views: 0.1ms | ActiveRecord: 33.6ms)
 
 
+Started GET "/communities" for 127.0.0.1 at 2018-01-17 23:18:51 -0500
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (1.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (1.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+Completed 200 OK in 90ms (Views: 0.3ms | ActiveRecord: 23.5ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-01-17 23:18:58 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"gg", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gg"], ["LIMIT", 1]]
+Completed 200 OK in 92ms (Views: 0.5ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/ledgers" for 127.0.0.1 at 2018-01-17 23:18:58 -0500
+Processing by LedgersController#index as HTML
+  [1m[36mLedger Load (2.2ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 0.1ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2018-01-17 23:33:00 -0500
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommunitiesController#index as HTML
+  [1m[36mCommunity Load (4.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mPost Load (3.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (3.1ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+Completed 200 OK in 134ms (Views: 0.2ms | ActiveRecord: 33.9ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-01-17 23:33:07 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"gg", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gg"], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 0.5ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/ledgers" for 127.0.0.1 at 2018-01-17 23:33:07 -0500
+Processing by LedgersController#index as HTML
+  [1m[36mLedger Load (16.3ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mReply Load (0.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mCACHE Reply Load (0.0ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = $1[0m  [["post_id", 1]]
+Completed 200 OK in 52ms (Views: 0.1ms | ActiveRecord: 22.3ms)
+
+
